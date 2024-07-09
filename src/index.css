@@ -7,7 +7,7 @@
         font-family: 'SpaceMono';
         src: url('./assets/fonts/SpaceMono-Regular.ttf') format('truetype');
         font-style: normal;
-        font-weight: normal;
+        font-weight: 400;
     }
 
     @font-face {
