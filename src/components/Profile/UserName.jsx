@@ -11,7 +11,7 @@ function UserName({ avatar, name, username, date, darkMode }) {
 
   return (
     <section className="mb-8 flex gap-5">
-      <div>
+      <div className="shrink-0">
         <img src={avatar} alt="avatar" className="size-[70px] rounded-full" />
       </div>
       <div>
