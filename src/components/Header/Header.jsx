@@ -1,12 +1,5 @@
-import Logo from './Logo.jsx';
-import DarkModeToggle from './DarkModeToggle.jsx';
-
-function Header() {
-  return (
-    <header className="mb-[35px] flex justify-between">
-      <Logo />
-      <DarkModeToggle />
-    </header>
-  );
+function Header({ children }) {
+  return <header className="mb-[35px] flex justify-between">{children}</header>;
 }
+
 export default Header;
