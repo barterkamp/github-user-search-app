@@ -1,6 +1,7 @@
-function Introduction() {
+function Introduction({ darkMode }) {
   return (
-    <div className="flex flex-col items-center justify-center gap-5 text-slateGray">
+    <div
+      className={`${darkMode ? 'text-white' : 'text-slateGray'} flex flex-col items-center justify-center gap-5 text-slateGray`}>
       <h1 className="text-lg font-bold">
         Welcome to devfinder!
         <span className="ml-2 inline-block text-2xl">🕵️</span>
