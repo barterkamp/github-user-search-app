@@ -1,18 +1,18 @@
+function getColorClass(darkMode, value) {
+  if (darkMode && value === null) return 'text-cadetBlue';
+  if (darkMode && value !== null) return 'text-white';
+  if (!darkMode && value !== null) return 'text-queenBlue';
+  if (!darkMode && value === null) return 'text-cadetBlue';
+}
+
+function getFillClass(darkMode, value) {
+  if (darkMode && value === null) return 'fill-cadetBlue';
+  if (darkMode && value !== null) return 'fill-white';
+  if (!darkMode && value !== null) return 'fill-queenBlue';
+  if (!darkMode && value === null) return 'fill-cadetBlue';
+}
+
 function UserDetails({ city, url, twitter, company, darkMode }) {
-  function getColorClass(darkMode, value) {
-    if (darkMode && value === null) return 'text-cadetBlue';
-    if (darkMode && value !== null) return 'text-white';
-    if (!darkMode && value !== null) return 'text-queenBlue';
-    if (!darkMode && value === null) return 'text-cadetBlue';
-  }
-
-  function getFillClass(darkMode, value) {
-    if (darkMode && value === null) return 'fill-cadetBlue';
-    if (darkMode && value !== null) return 'fill-white';
-    if (!darkMode && value !== null) return 'fill-queenBlue';
-    if (!darkMode && value === null) return 'fill-cadetBlue';
-  }
-
   return (
     <ul className="flex flex-col gap-y-4">
       <li className="flex gap-x-7">
