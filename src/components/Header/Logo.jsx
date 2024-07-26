@@ -1,9 +1,10 @@
-function Logo() {
-    return (
-        <p className="font-spaceMono text-2xl font-bold text-charlestonGreen">
-            devfinder
-        </p>
-    )
+function Logo({ darkMode }) {
+  return (
+    <p
+      className={`${darkMode ? 'text-white' : 'text-gunMetalDark'} text-2xl font-bold text-charlestonGreen`}>
+      devfinder
+    </p>
+  );
 }
 
-export default Logo
+export default Logo;
