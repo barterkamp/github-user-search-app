@@ -38,7 +38,7 @@ function UserProfile({ profileData, isLoading, error, darkMode }) {
       )}
 
       {/* if there is no data, no error and the loading state is false, show the welcome message */}
-      {!isLoading && !hasProfileData && !error && <Introduction />}
+      {!isLoading && !hasProfileData && !error && <Introduction darkMode={darkMode} />}
 
       {/* if there is data, no error and the loading state is false, show the user profile */}
       {!isLoading && !error && hasProfileData && (
