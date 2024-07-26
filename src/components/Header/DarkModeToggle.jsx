@@ -1,11 +1,31 @@
 import iconMoon from '../../assets/icons/icon-moon.svg';
+import iconSun from '../../assets/icons/icon-sun.svg';
 
-function DarkModeToggle() {
+function DarkModeToggle({ darkMode, setDarkMode }) {
+  function handleDarkModeToggle() {
+    setDarkMode((prevDarkMode) => !prevDarkMode);
+    console.log(darkMode);
+  }
+
   return (
-    <div className="flex items-center gap-4">
-      <p className="font-spaceMono text-sm uppercase text-queenBlue">dark</p>
-      <img src={iconMoon} alt="icon-moon" className="size-5 flex-shrink-0" />
-    </div>
+    <button className="relative flex items-center gap-2.5" onClick={handleDarkModeToggle}>
+      <span
+        className={`${darkMode ? 'text-white' : 'text-queenBlue'} inline-block text-sm uppercase transition-colors duration-200`}>
+        {darkMode ? 'light' : 'dark'}
+      </span>
+      <div className="relative size-5 flex-shrink-0">
+        <img
+          src={iconMoon}
+          className={`absolute left-0 top-0 transition-opacity duration-200 ${darkMode ? 'opacity-0' : 'opacity-100'}`}
+          alt="icon-moon"
+        />
+        <img
+          src={iconSun}
+          className={`absolute left-0 top-0 transition-opacity duration-200 ${darkMode ? 'opacity-100' : 'opacity-0'}`}
+          alt="icon-sun"
+        />
+      </div>
+    </button>
   );
 }
 
