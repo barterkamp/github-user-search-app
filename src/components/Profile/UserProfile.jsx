@@ -29,15 +29,18 @@ function UserProfile({ profileData, isLoading, error, darkMode }) {
       className={`${darkMode ? 'bg-yankeesBlue' : 'bg-offWhite shadow-custom'} relative min-h-8 rounded-[15px] px-6 py-8 transition-all duration-200`}>
       {/* if there is an error, show the error*/}
       {error && <ErrorMessage message={error} />}
+
       {/* if the data is loading, show the loader */}
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center">
           <Loader />
         </div>
       )}
-      {/* if there is no data, no error and the loading stat is false, show the welcome message */}
+
+      {/* if there is no data, no error and the loading state is false, show the welcome message */}
       {!isLoading && !hasProfileData && !error && <Introduction />}
-      {/* if there is data, and the error and loading states are set to false, show the user profile */}
+
+      {/* if there is data, no error and the loading state is false, show the user profile */}
       {!isLoading && !error && hasProfileData && (
         <>
           <UserName
