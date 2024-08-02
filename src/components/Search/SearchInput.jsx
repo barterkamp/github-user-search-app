@@ -1,7 +1,22 @@
 import iconSearch from '../../assets/icons/icon-search.svg';
 import SearchButton from './SearchButton.jsx';
+import { useRef, useEffect } from 'react';
 
-function SearchInput({ searchInput, setSearchInput, setSearchQuery, darkMode }) {
+function SearchInput({
+  searchInput,
+  setSearchInput,
+  setSearchQuery,
+  setWelcomeMessage,
+  setInputError,
+  darkMode,
+}) {
+  const inputRef = useRef();
+
+  // set focus directly on the input field when the page loads
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
   function handleSearchInput(e) {
     e.preventDefault();
     setSearchInput(e.target.value);
@@ -10,6 +25,10 @@ function SearchInput({ searchInput, setSearchInput, setSearchQuery, darkMode }) 
   const handleFormSubmit = (e) => {
     e.preventDefault();
     setSearchQuery(searchInput);
+    if (!searchInput) {
+      setInputError(true);
+      setWelcomeMessage(false);
+    }
   };
 
   return (
@@ -19,6 +38,7 @@ function SearchInput({ searchInput, setSearchInput, setSearchQuery, darkMode }) 
           className={`${darkMode ? 'bg-yankeesBlue text-white placeholder-white shadow-custom' : 'bg-offWhite text-charlestonGreen'} mb-4 w-full rounded-[15px] py-4 pl-10 text-sm transition-all duration-200 md:mb-6 md:py-5 md:pl-20 md:text-[18px]`}
           type="text"
           id="search-input"
+          ref={inputRef}
           value={searchInput}
           onChange={handleSearchInput}
           placeholder="Search username.."
