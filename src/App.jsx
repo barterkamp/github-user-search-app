@@ -12,6 +12,8 @@ function App() {
   const [error, setError] = useState('');
   const [profileData, setProfileData] = useState({});
   const [darkMode, setDarkMode] = useState(false);
+  const [welcomeMessage, setWelcomeMessage] = useState(true);
+  const [inputError, setInputError] = useState(false);
 
   useEffect(() => {
     if (!searchQuery.length) {
@@ -58,7 +60,7 @@ function App() {
 
   return (
     <div
-      className={`${darkMode ? 'bg-gunMetalDark' : 'bg-ghostWhite'} wrapper flex min-h-screen font-spaceMono transition-all duration-200 lg:flex-col lg:items-center`}>
+      className={`${darkMode ? 'bg-gunMetalDark' : 'bg-ghostWhite'} wrapper flex min-h-screen flex-col items-center font-spaceMono transition-all duration-200`}>
       <div className="container max-w-[730px] px-6 pt-8 md:px-24 md:pt-[140px] lg:px-0 lg:pt-36">
         <Header>
           <Logo darkMode={darkMode} />
@@ -69,10 +71,14 @@ function App() {
             searchInput={searchInput}
             setSearchInput={setSearchInput}
             setSearchQuery={setSearchQuery}
+            setWelcomeMessage={setWelcomeMessage}
+            setInputError={setInputError}
             darkMode={darkMode}
           />
           <UserProfile
             profileData={profileData}
+            welcomeMessage={welcomeMessage}
+            inputError={inputError}
             isLoading={isLoading}
             error={error}
             darkMode={darkMode}
