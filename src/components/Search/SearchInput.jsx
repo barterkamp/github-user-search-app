@@ -35,7 +35,7 @@ function SearchInput({
     <form onSubmit={handleFormSubmit}>
       <label htmlFor="search-input" className="relative">
         <input
-          className={`${darkMode ? 'bg-yankeesBlue text-white placeholder-white shadow-custom' : 'bg-offWhite text-charlestonGreen'} mb-4 w-full rounded-[15px] py-4 pl-10 text-sm transition-all duration-200 md:mb-6 md:py-5 md:pl-20 md:text-[18px]`}
+          className={`${darkMode ? 'bg-yankeesBlue text-white placeholder-white shadow-custom' : 'bg-offWhite text-charlestonGreen'} mb-4 w-full rounded-[15px] py-4 pl-10 text-lg transition-all duration-200 md:mb-6 md:py-5 md:pl-20 md:text-[18px]`}
           type="text"
           id="search-input"
           ref={inputRef}
