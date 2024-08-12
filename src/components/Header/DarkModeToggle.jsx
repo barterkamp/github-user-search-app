@@ -4,7 +4,6 @@ import iconSun from '../../assets/icons/icon-sun.svg';
 function DarkModeToggle({ darkMode, setDarkMode }) {
   function handleDarkModeToggle() {
     setDarkMode((prevDarkMode) => !prevDarkMode);
-    console.log(darkMode);
   }
 
   return (
