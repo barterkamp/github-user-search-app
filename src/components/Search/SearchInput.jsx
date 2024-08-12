@@ -10,7 +10,7 @@ function SearchInput({
   setInputError,
   darkMode,
 }) {
-  const inputRef = useRef();
+  const inputRef = useRef(null);
 
   // set focus directly on the input field when the page loads
   useEffect(() => {
