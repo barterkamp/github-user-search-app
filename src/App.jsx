@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useFetch } from './hooks/useFetch.jsx';
 import Header from './components/Header/Header.jsx';
 import SearchInput from './components/Search/SearchInput.jsx';
@@ -15,6 +15,16 @@ function App() {
 
   // custom hook to fetch user data
   const { isLoading, error, profileData } = useFetch(searchQuery, setSearchInput);
+
+  // change title based on user profile data login name
+  useEffect(() => {
+    if (!profileData.login) return;
+    document.title = `User: @${profileData.login}`;
+
+    return () => {
+      document.title = 'GitHub User Search';
+    };
+  }, [profileData]);
 
   return (
     <div
